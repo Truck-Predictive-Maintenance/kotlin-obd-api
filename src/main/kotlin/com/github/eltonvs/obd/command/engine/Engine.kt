@@ -13,8 +13,7 @@ class SpeedCommand : ObdCommand() {
     override val pid = "0D"
 
     override val defaultUnit = "Km/h"
-//    override val handler = { it: ObdRawResponse -> bytesToInt(it.bufferedValue, bytesToProcess = 1).toString() }
-    override val handler = { it: ObdRawResponse -> bytesToInt(it.bufferedValue, bytesToProcess = 1, start = 4).toString() }
+    override val handler = { it: ObdRawResponse -> bytesToInt(it.bufferedValue, bytesToProcess = 1).toString() }
 }
 
 class RPMCommand : ObdCommand() {
@@ -24,8 +23,7 @@ class RPMCommand : ObdCommand() {
     override val pid = "0C"
 
     override val defaultUnit = "RPM"
-    // override val handler = { it: ObdRawResponse -> (bytesToInt(it.bufferedValue) / 4).toString() }
-    override val handler = { it: ObdRawResponse -> (bytesToInt(it.bufferedValue, start = 4) / 4).toString() }
+    override val handler = { it: ObdRawResponse -> (bytesToInt(it.bufferedValue) / 4).toString() }
 }
 
 class MassAirFlowCommand : ObdCommand() {

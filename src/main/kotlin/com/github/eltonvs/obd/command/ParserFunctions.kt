@@ -3,7 +3,7 @@ package com.github.eltonvs.obd.command
 import kotlin.math.pow
 
 
-fun bytesToInt(bufferedValue: IntArray, start: Int = 2, bytesToProcess: Int = -1): Long {
+fun bytesToInt(bufferedValue: IntArray, start: Int = 4, bytesToProcess: Int = -1): Long {
     var bufferToProcess = bufferedValue.drop(start)
     if (bytesToProcess != -1) {
         bufferToProcess = bufferToProcess.take(bytesToProcess)
